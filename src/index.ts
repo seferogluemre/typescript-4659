@@ -122,5 +122,43 @@ stuff = [1, 2, 3, 4, 5];
 // stuff["Emre",1,"Ahmet"]
 // ------
 
+// Soru 3 Çözümü
+type SkillLevel = "Beginner" | "Intermediate" | "Advanced" | "Expert";
 
 // Soru 4 Çözümü
+type SkiSchoolStudent = {
+  name: string;
+  age: number;
+  sport: "ski" | "snowboard";
+  level: SkillLevel;
+};
+
+// Soru 5 Çözümü;
+type RGB = {
+  r: number;
+  g: number;
+  b: number;
+};
+type HSL = {
+  h: number;
+  s: number;
+  l: number;
+};
+
+let colors: (RGB | HSL)[] = [];
+
+// Soru 5 Çözümü;
+// Name string veya string arrayi olabilir dedik
+const greet = (name: string | string[]) => {
+  // Eger Name parametresi array ise onu döngüye sokarak herbir elemanın degerini console bastık
+  if (Array.isArray(name)) {
+    name.forEach((isim) => {
+      console.log(`Merhaba ${isim}`);
+    });
+  } else {
+    // Eger degilse direk parametreyi console bastık
+    console.log(`Merhaba ${name}`);
+  }
+};
+greet("Ahmet");
+greet(["Emre", "Yunus", "Mehmet"]);
